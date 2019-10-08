@@ -5,6 +5,9 @@
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbTrataniento.SelectedIndex = 3
+        Dim dtFecha As Date = DateSerial(Year(Date.Today), 1, 1)
+        Me.dtpDate.Value = dtFecha
+        Me.dtpDate.Value = Date.Today
     End Sub
     Private Sub CbTrataniento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTrataniento.SelectedIndexChanged
 
@@ -45,31 +48,33 @@
 
         Else
             lbNameF.Text = txtName.Text
-                lbtratamientoF.Text = cbTrataniento.SelectedItem.ToString
-                lblCostF.Text = lblCost.Text
-                lbDaysF.Text = DateDiff("d", DateString, dtpDate.Value.Date) * -1 & " dias"
+            lbtratamientoF.Text = cbTrataniento.SelectedItem.ToString
+            lblCostF.Text = lblCost.Text
+            lbDaysF.Text = DateDiff("d", DateString, dtpDate.Value.Date) * -1 & " dias"
 
-                If (txtNAge.Value > 60) Then
-                    descuento = (Val(lblCostF.Text) * 0.25)
-                    lbDiscountF.Text = descuento
-                ElseIf (txtNAge.Value < 25) Then
-                    descuento = (Val(lblCostF.Text) * 0.15)
-                    lbDiscountF.Text = descuento
-                Else
-                    lbDiscountF.Text = 0
-                End If
+            If (txtNAge.Value > 60) Then
+                descuento = (Val(lblCostF.Text) * 0.25)
+                lbDiscountF.Text = descuento
+            ElseIf (txtNAge.Value < 25) Then
+                descuento = (Val(lblCostF.Text) * 0.15)
+                lbDiscountF.Text = descuento
+            Else
+                lbDiscountF.Text = 0
+            End If
 
-                lbTotalPayF.Text = Val(lblCostF.Text) - Val(lbDiscountF.Text)
+            lbTotalPayF.Text = Val(lblCostF.Text) - Val(lbDiscountF.Text)
 
-                If (Val(lbDaysF.Text) >= 5 And Val(lbDaysF.Text) <= 7) Then
+            If (Val(lbDaysF.Text) >= 5 And Val(lbDaysF.Text) <= 7) Then
                 lblAcredor.Text = "Felicidades usted ha ganado" & vbCrLf & "un tratameinto completamente gratis"
                 lblLitLetters.Text = "Valido solo en tratameintos de menor" & vbCrLf & "coste al actual facturado"
             End If
-            End If
+        End If
     End Sub
 
-
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        FormPortada.Close()
+    End Sub
 End Class
 
 'MsgBox(DateString) selecciona el dia actual de la maquina sin la hora en un formato string MM/DD/AA
-'MsgBox(dtpDate.Value.Date) toma la fecha selccionada sin la hora del date time picker
+'MsgBox() toma la fecha selccionada sin la hora del date time picker

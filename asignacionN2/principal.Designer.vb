@@ -45,6 +45,7 @@ Partial Class principal
         Me.rtbDescripcion = New System.Windows.Forms.RichTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lblLitLetters = New System.Windows.Forms.Label()
         Me.lblAcredor = New System.Windows.Forms.Label()
         Me.lbTotalPayF = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -59,7 +60,7 @@ Partial Class principal
         Me.lbNameF = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.lblLitLetters = New System.Windows.Forms.Label()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txtNAge, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -289,6 +290,7 @@ Partial Class principal
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.btnSalir)
         Me.GroupBox4.Controls.Add(Me.lblLitLetters)
         Me.GroupBox4.Controls.Add(Me.lblAcredor)
         Me.GroupBox4.Controls.Add(Me.lbTotalPayF)
@@ -310,6 +312,17 @@ Partial Class principal
         Me.GroupBox4.TabIndex = 27
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Factura"
+        '
+        'lblLitLetters
+        '
+        Me.lblLitLetters.AutoSize = True
+        Me.lblLitLetters.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLitLetters.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblLitLetters.Location = New System.Drawing.Point(7, 386)
+        Me.lblLitLetters.Name = "lblLitLetters"
+        Me.lblLitLetters.Size = New System.Drawing.Size(11, 13)
+        Me.lblLitLetters.TabIndex = 14
+        Me.lblLitLetters.Text = "."
         '
         'lblAcredor
         '
@@ -439,16 +452,14 @@ Partial Class principal
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Spa la SAL"
         '
-        'lblLitLetters
+        'btnSalir
         '
-        Me.lblLitLetters.AutoSize = True
-        Me.lblLitLetters.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLitLetters.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLitLetters.Location = New System.Drawing.Point(7, 386)
-        Me.lblLitLetters.Name = "lblLitLetters"
-        Me.lblLitLetters.Size = New System.Drawing.Size(11, 13)
-        Me.lblLitLetters.TabIndex = 14
-        Me.lblLitLetters.Text = "."
+        Me.btnSalir.Location = New System.Drawing.Point(0, 403)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(225, 23)
+        Me.btnSalir.TabIndex = 15
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'principal
         '
@@ -512,4 +523,5 @@ Partial Class principal
     Friend WithEvents Label12 As Label
     Friend WithEvents lblAcredor As Label
     Friend WithEvents lblLitLetters As Label
+    Friend WithEvents btnSalir As Button
 End Class
