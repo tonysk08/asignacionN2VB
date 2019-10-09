@@ -78,3 +78,4 @@ End Class
 
 'MsgBox(DateString) selecciona el dia actual de la maquina sin la hora en un formato string MM/DD/AA
 'MsgBox() toma la fecha selccionada sin la hora del date time picker
+'conectario random
